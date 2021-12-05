@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --GRAY-PRIMARY: #202020;
+    --GRAY-SECONDARY: #181818;
+    --GRAY-TERTIARY: #121212;
+    --GRAY-QUATERNARY: #838383;
+    --GRAY-QUINARY: #373737;
+    --GRAY-SENARY: #212121;
+}
+
+body {
+    background: var(--GRAY-SECONDARY);
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 17fr;
+    grid-template-rows: 1.4fr 7fr;
+    grid-template-areas: 
+    "aside header"
+    "aside main";
+}
+
+header {
+    background: var(--GRAY-PRIMARY);
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+}
+
+aside {
+    background: var(--GRAY-SENARY);
+    grid-area: aside;
+}
