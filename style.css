@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
 
 :root {
@@ -11,6 +12,7 @@
     --GRAY-QUATERNARY: #838383;
     --GRAY-QUINARY: #373737;
     --GRAY-SENARY: #212121;
+    --GRAY-SECTARY: #aaa;
 }
 
 body {
@@ -18,7 +20,7 @@ body {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 17fr;
-    grid-template-rows: 1.4fr 7fr;
+    grid-template-rows: 112px 7fr;
     grid-template-areas: 
     "aside header"
     "aside main";
@@ -27,6 +29,21 @@ body {
 header {
     background: var(--GRAY-PRIMARY);
     grid-area: header;
+    padding-top: 15px;
+}
+
+.logo {
+    display: flex;
+}
+
+.logo > img {
+    width: 130px;
+}
+
+.logo > figcaption {
+    color: var(--GRAY-SECTARY);
+    font-size: .6em;
+    margin: 0 0 20px 5px;
 }
 
 main {
