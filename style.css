@@ -10,7 +10,7 @@ body {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 17fr;
-    grid-template-rows: 112px 7fr;
+    grid-template-rows: 112px 1fr;
     grid-template-areas: 
     "aside header"
     "aside main";
@@ -22,7 +22,6 @@ header {
     padding-top: 8px;
     display: flex;
     flex-direction: column;
-    
 }
 
 a {
@@ -158,8 +157,8 @@ a {
     flex: 1;
     padding-left: 25px;
     position: relative;
+    overflow: hidden;
 }
-
 
 .nextBtn {
     position: absolute;
@@ -190,11 +189,15 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: .3s;
     border-radius: 50%;
 }
 
-.nextBtn:active figure {
+.borderNextBtn {
+    animation-name: borderNextBtn;
+    animation-duration: 1s;
+}
+
+.nextBtn:active > figure {
     background: rgba(255, 255, 255, 0.1);
 }
 
@@ -208,7 +211,6 @@ a {
     gap: 10px;
     height: 100%;
     list-style: none;
-    overflow: hidden;
 }
 
 .tagList li:first-child {
@@ -239,4 +241,14 @@ main {
 aside {
     background: #212121;
     grid-area: aside;
+}
+
+@keyframes borderNextBtn {
+    from {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+
+    }
+    to {
+        border: none;
+    }
 }
