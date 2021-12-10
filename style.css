@@ -9,8 +9,7 @@ body {
     background: #181818;
     min-height: 100vh;
     display: grid;
-    overflow-x: hidden;
-    grid-template-columns:  72px 1fr;
+    grid-template-columns: 240px 1fr;
     grid-template-rows: 112px 1fr;
     grid-template-areas: 
     "aside header"
@@ -267,19 +266,24 @@ main {
     grid-area: main;
 }
 
-aside {
+.firstAside,
+.secondAside {
     background: #212121;
     grid-area: aside;
 }
 
-aside label {
+.secondAside {
+    display: block;
+}
+
+.firstAside label {
     display: block;
     text-align: center;
     font-size: .6em;
     cursor: pointer;
 }
 
-aside li {
+.firstAside li {
     color: white;
     width: 72px;
     height: 74px;
@@ -290,15 +294,15 @@ aside li {
     gap: 10px;
 }
 
-aside li:not(:first-child) {
+.firstAside li:not(:first-child) {
     cursor: pointer;
 }
 
-aside li:not(:first-child):hover {
+.firstAside li:not(:first-child):hover {
     background: #303030;
 }
 
-aside img {
+.firstAside img {
     width: 20px;
 }
 

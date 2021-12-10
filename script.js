@@ -14,6 +14,8 @@ const menu = document.querySelector("#menu");
 //tags
 
 function borderAnimation(el) {
+    el.classList.remove("animatedBorder")
+
     el.classList.add("animatedBorder")
     setTimeout(()=> {
         el.classList.remove("animatedBorder")
