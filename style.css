@@ -28,6 +28,10 @@ a {
     text-decoration: none;
 }
 
+.off {
+    display: none;
+}
+
 .principalWrapper {
     display: flex;
     align-items: center;
@@ -160,6 +164,8 @@ a {
     overflow: hidden;
 }
 
+/* tags 1.640,73 */
+
 .nextBtn {
     position: absolute;
     top: 0;
@@ -211,6 +217,8 @@ a {
     gap: 10px;
     height: 100%;
     list-style: none;
+    transform: translateX(0);
+    transition: .3s;
 }
 
 .tagList li:first-child {
