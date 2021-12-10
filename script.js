@@ -10,6 +10,9 @@ const figureNextButton = document.querySelector(".nextBtn figure");
 const figurePrevButton = document.querySelector(".prevBtn figure")
 const tagList = document.querySelector(".tagList");
 const menu = document.querySelector("#menu");
+const secondAside = document.querySelector(".secondAside");
+const body = document.querySelector("body");
+const menuAndLogo = document.querySelector(".menuAndLogo");
 
 //tags
 
@@ -72,7 +75,11 @@ clearSearchBtn.addEventListener("click", ()=> {
 
 // aside
 
-menu.addEventListener("click", (e)=> {
+menu.addEventListener("click", ()=> {
     borderAnimation(menu)
+
+    body.classList.toggle("secondAsideGrid");
+    menuAndLogo.classList.toggle("filledMenu");
+    secondAside.classList.toggle("off");
 })
 

@@ -9,10 +9,10 @@ body {
     background: #181818;
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 240px 1fr;
-    grid-template-rows: 112px 1fr;
+    grid-template-columns: 72px 1fr;
+    grid-template-rows: 56px 1fr;
     grid-template-areas: 
-    "aside header"
+    "header header"
     "aside main";
 }
 
@@ -22,6 +22,7 @@ header {
     padding-top: 8px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 a {
@@ -55,6 +56,7 @@ a {
 
 .search {
     display: flex;
+    margin-left: -20px;
 }
 
 .search > button:nth-of-type(1) {
@@ -155,13 +157,118 @@ a {
     border-radius: 50%;
 }
 
+.menuWrapper {
+    margin: -8px 0;
+    height: 56px;
+    width: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #212121;
+}
+
+#menu img {
+    cursor: pointer;
+    width: 20px;
+}
+
+#menu {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#menu:active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.menuAndLogo {
+    width: 240px;
+    display: flex;
+    align-items: center;
+}
+
+.firstAside,
+.secondAside {
+    background: #212121;
+    grid-area: aside;
+}
+
+.firstAside label {
+    display: block;
+    text-align: center;
+    font-size: .6em;
+    cursor: pointer;
+}
+
+.firstAside li {
+    color: white;
+    width: 72px;
+    height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.firstAside li:hover {
+    background: #303030;
+}
+
+.firstAside img {
+    width: 20px;
+}
+.filledMenu {
+    background-color: #212121;
+    height: 56px;
+    margin: -8px 0;
+}
+
+.secondAsideGrid {
+    grid-template-columns: 240px 1fr;
+}
+
+.secondAside {
+    padding-right: 20px;
+}
+
+.secondAside li {
+    color: white;
+    height: 40px;
+    font-size: .9em;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.secondAside img {
+    width: 20px;
+}
+
+.secondAside hr {
+    border: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 10px 0;
+}
+
+main {
+    grid-area: main;
+    overflow-x: hidden;
+}
+
 .tags {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    flex: 1;
     padding-left: 25px;
     position: relative;
     overflow: hidden;
+    height: 56px;
 }
 
 .tagBtn {
@@ -258,76 +365,15 @@ a {
     transition: .3s;
 }
 
-.tagList li:not(:first-child):hover {
+.tagList li:hover {
     background: #4d4d4d;
-}
-
-main {
-    grid-area: main;
-}
-
-.firstAside,
-.secondAside {
-    background: #212121;
-    grid-area: aside;
-}
-
-.secondAside {
-    display: block;
-}
-
-.firstAside label {
-    display: block;
-    text-align: center;
-    font-size: .6em;
-    cursor: pointer;
-}
-
-.firstAside li {
-    color: white;
-    width: 72px;
-    height: 74px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.firstAside li:not(:first-child) {
-    cursor: pointer;
-}
-
-.firstAside li:not(:first-child):hover {
-    background: #303030;
-}
-
-.firstAside img {
-    width: 20px;
-}
-
-#menu img {
-    cursor: pointer;
-}
-
-#menu {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#menu:active {
-    background: rgba(255, 255, 255, 0.1);
 }
 
 @keyframes animatedBorder {
     from {
         border: 1px solid rgba(255, 255, 255, 0.3);
-
     }
+
     to {
         border: 1px solid transparent;
     }
