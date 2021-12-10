@@ -272,12 +272,59 @@ aside {
     grid-area: aside;
 }
 
+aside label {
+    display: block;
+    text-align: center;
+    font-size: .6em;
+    cursor: pointer;
+}
+
+aside li {
+    color: white;
+    width: 72px;
+    height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+aside li:not(:first-child) {
+    cursor: pointer;
+}
+
+aside li:not(:first-child):hover {
+    background: #303030;
+}
+
+aside img {
+    width: 20px;
+}
+
+#menu img {
+    cursor: pointer;
+}
+
+#menu {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#menu:active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
 @keyframes animatedBorder {
     from {
         border: 1px solid rgba(255, 255, 255, 0.3);
 
     }
     to {
-        border: none;
+        border: 1px solid transparent;
     }
 }

@@ -9,6 +9,7 @@ const prevBtn = document.querySelector(".prevBtn");
 const figureNextButton = document.querySelector(".nextBtn figure");
 const figurePrevButton = document.querySelector(".prevBtn figure")
 const tagList = document.querySelector(".tagList");
+const menu = document.querySelector("#menu");
 
 //tags
 
@@ -17,6 +18,7 @@ function borderAnimation(el) {
     setTimeout(()=> {
         el.classList.remove("animatedBorder")
     }, 1000)
+
 }
 
 function tagBtnsFunc(translate, el) {
@@ -64,5 +66,11 @@ clearSearchBtn.addEventListener("click", ()=> {
     clearSearchBtn.style.display = "none";
     virtualKeyboard.style.right = "10px";
     searchInput.focus();
+})
+
+// aside
+
+menu.addEventListener("click", (e)=> {
+    borderAnimation(menu)
 })
 
