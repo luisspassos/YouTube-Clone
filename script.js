@@ -3,32 +3,44 @@ const searchInput = document.querySelector(".searchInput input");
 const virtualKeyboard = document.querySelector("#virtualKeyboard");
 const form = document.querySelector("form");
 const nextWrapper = document.querySelector(".nextWrapper");
+const prevWrapper = document.querySelector(".prevWrapper");
 const nextBtn = document.querySelector(".nextBtn");
+const prevBtn = document.querySelector(".prevBtn");
 const figureNextButton = document.querySelector(".nextBtn figure");
+const figurePrevButton = document.querySelector(".prevBtn figure")
 const tagList = document.querySelector(".tagList");
 
 //tags
 
-function borderAnimation() {
-    figureNextButton.classList.add("borderNextBtn")
+function borderAnimation(el) {
+    el.classList.add("animatedBorder")
     setTimeout(()=> {
-        figureNextButton.classList.remove("borderNextBtn")
+        el.classList.remove("animatedBorder")
     }, 1000)
 }
 
-function nextBtnFunc() {
-    borderAnimation()
+function tagBtnsFunc(translate, el) {
+    borderAnimation(el)
 
-    tagList.style.transform = "translateX(-350px)"
+    tagList.style.transform = `translateX(${translate})`
     nextWrapper.classList.toggle("off");
+    prevWrapper.classList.toggle("off");
 }
 
+prevBtn.addEventListener("dragend", ()=> {
+    tagBtnsFunc("0px", figurePrevButton)
+})
+
+prevBtn.addEventListener("click", ()=> {
+    tagBtnsFunc("0px", figurePrevButton)
+})
+
 nextBtn.addEventListener("dragend", ()=> {
-   nextBtnFunc()
+   tagBtnsFunc("-350px", figureNextButton)
 })
 
 nextBtn.addEventListener("click", ()=> {
-    nextBtnFunc()
+    tagBtnsFunc("-350px", figureNextButton)
 })
 
 // search
