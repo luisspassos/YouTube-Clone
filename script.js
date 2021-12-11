@@ -14,8 +14,7 @@ const secondAside = document.querySelector(".secondAside");
 const body = document.querySelector("body");
 const menuAndLogo = document.querySelector(".menuAndLogo");
 const firstAside = document.querySelector(".firstAside");
-
-//tags
+const options = document.querySelector(".options");
 
 function borderAnimation(el) {
     el.classList.remove("animatedBorder")
@@ -26,6 +25,8 @@ function borderAnimation(el) {
     }, 1000)
 
 }
+
+//tags
 
 function tagBtnsFunc(translate, el) {
     borderAnimation(el)
@@ -84,3 +85,8 @@ menu.addEventListener("click", ()=> {
     body.classList.toggle("firstAsideGrid");
 })
 
+// video 
+
+options.addEventListener("click", ()=> {
+    borderAnimation(options);
+})

@@ -431,22 +431,113 @@ main {
     list-style: none;
 }
 
-.imgAuthorVideo img {
+.videos li {
+    cursor: pointer;
+    width: 253px;
+}
+
+.videoImg {
+    background: rgba(255, 255, 255, 0.1) url(https://picsum.photos/253/142.jpg);
+    width: 253px;
+    height: 142px;
+    padding: 5px;
+    display: flex;
+    justify-content: end;
+}
+
+.videoImg time {
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 2px 4px;
+    border-radius: 3px;
+    align-self: flex-end;
+    opacity: 0.9;
+}
+
+.videos li:hover time {
+    opacity: 0;
+    transition: .5s;
+}
+
+.otherOptions figure {
+    background: black;
+    height: 30px;
+    width: 30px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+}
+
+.otherOptions figure:first-child {
+    margin-bottom: 5px;
+}
+
+.otherOptions img {
+    width: 20px;
+}
+
+.imgAuthorVideo {
     width: 36px; 
     border-radius: 50%;
 }
 
 .videoInfos h3 {
     color: white;
+    margin-bottom: 6px;
+    font-size: 14px;
+    line-height: 1.3em;
 }
 
 .videoInfos p {
     color: #AAAAAA;
+    font-size: 12px;
+    line-height: 1.4em;
+}
+
+.authorVideo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .authorVideo > svg {
     width: 14px;
-    height: 14px;
+}
+
+.videoInfos {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    position: relative;
+    margin-top: 13px;
+}
+
+.options {
+    display: none;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    right: -12px;
+    top: -10px;
+}
+
+.options:active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.options img {
+    width: 22px;
+}
+
+.videos li:hover .options {
+    display: flex;
 }
 
 @keyframes animatedBorder {
