@@ -426,6 +426,29 @@ main {
     background: #4d4d4d;
 }
 
+.videos {
+    padding: 25px;
+    list-style: none;
+}
+
+.imgAuthorVideo img {
+    width: 36px; 
+    border-radius: 50%;
+}
+
+.videoInfos h3 {
+    color: white;
+}
+
+.videoInfos p {
+    color: #AAAAAA;
+}
+
+.authorVideo > svg {
+    width: 14px;
+    height: 14px;
+}
+
 @keyframes animatedBorder {
     from {
         border: 1px solid rgba(255, 255, 255, 0.3);

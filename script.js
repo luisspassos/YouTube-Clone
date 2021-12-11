@@ -44,11 +44,11 @@ prevBtn.addEventListener("click", ()=> {
 })
 
 nextBtn.addEventListener("dragend", ()=> {
-   tagBtnsFunc("-500px", figureNextButton)
+   tagBtnsFunc("-550px", figureNextButton)
 })
 
 nextBtn.addEventListener("click", ()=> {
-    tagBtnsFunc("-500px", figureNextButton)
+    tagBtnsFunc("-550px", figureNextButton)
 })
 
 // search
