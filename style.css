@@ -223,6 +223,7 @@ a {
 .firstAside img {
     width: 20px;
 }
+
 .filledMenu {
     background-color: #212121;
     height: 56px;
@@ -234,20 +235,40 @@ a {
 }
 
 .secondAside {
-    padding-right: 20px;
+    padding: 5px 15px 0 0;
+    height: calc(100vh - 56px);
+    overflow-y: scroll;
 }
 
 .secondAside li {
+    padding-left: 25px;
     color: white;
     height: 40px;
     font-size: .9em;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 23px;
+    cursor: pointer;
+}
+
+.secondAside li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.secondAside ul:nth-child(1) li:first-child {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.secondAside ul:nth-child(1) li:first-child:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.secondAside label {
+    cursor: pointer;
 }
 
 .secondAside img {
-    width: 20px;
+    width: 21px;
 }
 
 .secondAside hr {
@@ -255,6 +276,26 @@ a {
     height: 1px;
     background-color: rgba(255, 255, 255, 0.1);
     margin: 10px 0;
+}
+
+.secondAside ul:last-child p {
+    font-weight: bold;
+    color: #AAAAAA;
+    font-size: .9em;
+    padding: 8px 0 8px 25px;
+}
+
+.secondAside ul:last-child img {
+    width: 24px;
+    border-radius: 50%;
+}
+
+.secondAside ul:last-child div {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #3EA6FF;
+    margin: 0 25px 0 auto;
 }
 
 main {
