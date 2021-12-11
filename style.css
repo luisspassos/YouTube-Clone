@@ -18,7 +18,7 @@
 
 body {
     background: #181818;
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 240px 1fr;
     grid-template-rows: 56px 1fr;
@@ -26,6 +26,9 @@ body {
 }
 
 header {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
     background: #202020;
     grid-area: header;
     padding-top: 8px;
@@ -429,6 +432,9 @@ main {
 .videos {
     padding: 25px;
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 15px;
 }
 
 .videos li {
@@ -440,7 +446,7 @@ main {
     background: rgba(255, 255, 255, 0.1) url(https://picsum.photos/253/142.jpg);
     width: 253px;
     height: 142px;
-    padding: 5px;
+    padding: 4px;
     display: flex;
     justify-content: end;
 }
@@ -459,6 +465,12 @@ main {
 .videos li:hover time {
     opacity: 0;
     transition: .5s;
+}
+
+.otherOptions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .otherOptions figure {
@@ -538,6 +550,14 @@ main {
 
 .videos li:hover .options {
     display: flex;
+}
+
+.videoImgOpts {
+    opacity: 0;
+}
+
+.videos li:hover .videoImgOpts {
+    opacity: 1;
 }
 
 @keyframes animatedBorder {
