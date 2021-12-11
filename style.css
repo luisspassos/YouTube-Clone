@@ -5,15 +5,24 @@
     font-family: "Roboto", sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: 18px;
+}
+
+ ::-webkit-scrollbar-thumb {
+    border: 5px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
 body {
     background: #181818;
-    min-height: 100vh;
+    height: 100vh;
     display: grid;
-    grid-template-columns: 72px 1fr;
+    grid-template-columns: 240px 1fr;
     grid-template-rows: 56px 1fr;
-    grid-template-areas: 
-    "header header"
-    "aside main";
+    grid-template-areas: "header header" "aside main";
 }
 
 header {
@@ -44,11 +53,11 @@ a {
     display: flex;
 }
 
-.logo > img {
+.logo>img {
     width: 130px;
 }
 
-.logo > figcaption {
+.logo>figcaption {
     color: #AAAAAA;
     font-size: .6em;
     margin: 0 0 17px 5px;
@@ -59,7 +68,7 @@ a {
     margin-left: -20px;
 }
 
-.search > button:nth-of-type(1) {
+.search>button:nth-of-type(1) {
     width: 64px;
     cursor: pointer;
     background: #313131;
@@ -67,12 +76,12 @@ a {
     border-radius: 0 3px 3px 0;
 }
 
-.search > button:nth-of-type(1) > img {
+.search>button:nth-of-type(1)>img {
     width: 19px;
     cursor: pointer;
 }
 
-.search > button:nth-of-type(2) {
+.search>button:nth-of-type(2) {
     width: 40px;
     border-radius: 50%;
     border: 0;
@@ -81,7 +90,7 @@ a {
     cursor: pointer;
 }
 
-.search > button:nth-of-type(2) img {
+.search>button:nth-of-type(2) img {
     width: 22px;
 }
 
@@ -91,7 +100,7 @@ a {
     align-items: center;
 }
 
-.searchInput > button:nth-of-type(1) {
+.searchInput>button:nth-of-type(1) {
     position: absolute;
     right: 10px;
     border: 0;
@@ -100,11 +109,11 @@ a {
     width: 18px;
 }
 
-.searchInput > button:nth-of-type(1):hover > svg {
+.searchInput>button:nth-of-type(1):hover>svg {
     fill: #F9F9F9;
 }
 
-.searchInput > button:nth-of-type(2) {
+.searchInput>button:nth-of-type(2) {
     display: none;
     background: none;
     border: 0;
@@ -113,7 +122,7 @@ a {
     right: 10px;
 }
 
-.searchInput > button:nth-of-type(2) > img {
+.searchInput>button:nth-of-type(2)>img {
     width: 20px;
 }
 
@@ -152,7 +161,7 @@ a {
     width: 22px;
 }
 
-.othersHeader > button:last-child img {
+.othersHeader>button:last-child img {
     width: 32px;
     border-radius: 50%;
 }
@@ -197,6 +206,10 @@ a {
     grid-area: aside;
 }
 
+.firstAsideGrid {
+    grid-template-columns: 72px 1fr;
+}
+
 .firstAside label {
     display: block;
     text-align: center;
@@ -230,14 +243,17 @@ a {
     margin: -8px 0;
 }
 
-.secondAsideGrid {
-    grid-template-columns: 240px 1fr;
+.secondAside {
+    padding-top: 5px;
+    overflow-y: auto;
 }
 
-.secondAside {
-    padding: 5px 15px 0 0;
-    height: calc(100vh - 56px);
-    overflow-y: scroll;
+.secondAside::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.secondAside:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .secondAside li {
@@ -306,7 +322,6 @@ main {
 .tags {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-left: 25px;
     position: relative;
     overflow: hidden;
     height: 56px;
@@ -343,20 +358,20 @@ main {
 .prevTransparency {
     top: 0;
     left: 56px;
-    background: linear-gradient(to right, rgba(33, 33, 33, 0.98) 20%,rgba(33,33,33,0) 80%);
+    background: linear-gradient(to right, rgba(33, 33, 33, 0.98) 20%, rgba(33, 33, 33, 0) 80%);
 }
 
 .nextTransparency {
     top: 0;
     right: 56px;
-    background: linear-gradient(to left, rgba(33, 33, 33, 0.98) 20%,rgba(33,33,33,0) 80%);
+    background: linear-gradient(to left, rgba(33, 33, 33, 0.98) 20%, rgba(33, 33, 33, 0) 80%);
 }
 
-.nextBtn > figure,
-.prevBtn > figure {
+.nextBtn>figure,
+.prevBtn>figure {
     top: 0;
     right: 56px;
-    background: linear-gradient(to left, rgba(33, 33, 33, 0.98) 20%,rgba(33,33,33,0) 80%);
+    background: linear-gradient(to left, rgba(33, 33, 33, 0.98) 20%, rgba(33, 33, 33, 0) 80%);
     width: 32px;
     height: 32px;
     display: flex;
@@ -370,20 +385,21 @@ main {
     animation-duration: 1s;
 }
 
-.nextBtn:active > figure {
+.nextBtn:active>figure {
     background: rgba(255, 255, 255, 0.1);
 }
 
-.nextBtn > figure > img,
-.prevBtn > figure > img {
+.nextBtn>figure>img,
+.prevBtn>figure>img {
     width: 22px;
 }
 
 .tagList {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 10px;
     height: 100%;
+    padding: 0 25px;
     list-style: none;
     transform: translateX(0);
     transition: .3s;
@@ -414,7 +430,6 @@ main {
     from {
         border: 1px solid rgba(255, 255, 255, 0.3);
     }
-
     to {
         border: 1px solid transparent;
     }

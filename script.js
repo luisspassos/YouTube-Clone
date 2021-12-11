@@ -13,6 +13,7 @@ const menu = document.querySelector("#menu");
 const secondAside = document.querySelector(".secondAside");
 const body = document.querySelector("body");
 const menuAndLogo = document.querySelector(".menuAndLogo");
+const firstAside = document.querySelector(".firstAside");
 
 //tags
 
@@ -43,11 +44,11 @@ prevBtn.addEventListener("click", ()=> {
 })
 
 nextBtn.addEventListener("dragend", ()=> {
-   tagBtnsFunc("-350px", figureNextButton)
+   tagBtnsFunc("-500px", figureNextButton)
 })
 
 nextBtn.addEventListener("click", ()=> {
-    tagBtnsFunc("-350px", figureNextButton)
+    tagBtnsFunc("-500px", figureNextButton)
 })
 
 // search
@@ -78,8 +79,8 @@ clearSearchBtn.addEventListener("click", ()=> {
 menu.addEventListener("click", ()=> {
     borderAnimation(menu)
 
-    body.classList.toggle("secondAsideGrid");
     menuAndLogo.classList.toggle("filledMenu");
     secondAside.classList.toggle("off");
+    body.classList.toggle("firstAsideGrid");
 })
 
