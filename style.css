@@ -20,6 +20,7 @@ body {
     background: #181818;
     min-height: 100vh;
     display: grid;
+    overflow-x: hidden;
     grid-template-columns: 240px 1fr;
     grid-template-rows: 56px 1fr;
     grid-template-areas: "header header" "aside main";
@@ -319,15 +320,18 @@ a {
 
 main {
     grid-area: main;
-    overflow-x: hidden;
 }
 
 .tags {
+    background-color: #181818;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    overflow: hidden;
+    position: sticky;
+    z-index: 999;
+    top: 56px;
+    left: 0;
     height: 56px;
+    overflow-x: hidden;
 }
 
 .tagBtn {
@@ -425,7 +429,7 @@ main {
     transition: .3s;
 }
 
-.tagList li:hover {
+.tagList li:not(:first-child):hover {
     background: #4d4d4d;
 }
 
