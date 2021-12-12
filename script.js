@@ -14,7 +14,7 @@ const secondAside = document.querySelector(".secondAside");
 const body = document.querySelector("body");
 const menuAndLogo = document.querySelector(".menuAndLogo");
 const firstAside = document.querySelector(".firstAside");
-const options = document.querySelector(".options");
+const options = document.querySelectorAll(".options");
 
 function borderAnimation(el) {
     el.classList.remove("animatedBorder")
@@ -82,11 +82,14 @@ menu.addEventListener("click", ()=> {
 
     menuAndLogo.classList.toggle("filledMenu");
     secondAside.classList.toggle("off");
+    firstAside.classList.toggle("off");
     body.classList.toggle("firstAsideGrid");
 })
 
 // video 
 
-options.addEventListener("click", ()=> {
-    borderAnimation(options);
+options.forEach(opt => {
+    opt.addEventListener("click", ()=> {
+        borderAnimation(opt);
+    })
 })

@@ -16,6 +16,10 @@
     background-color: rgba(255, 255, 255, 0.5);
 }
 
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
 body {
     background: #181818;
     min-height: 100vh;
@@ -43,7 +47,7 @@ a {
 }
 
 .off {
-    display: none;
+   display: none !important; 
 }
 
 .principalWrapper {
@@ -210,6 +214,10 @@ a {
     grid-area: aside;
 }
 
+.asideWrapper {
+    position: fixed;
+}
+
 .firstAsideGrid {
     grid-template-columns: 72px 1fr;
 }
@@ -249,14 +257,19 @@ a {
 
 .secondAside {
     padding-top: 5px;
+}
+
+.secondAside .asideWrapper {
+    width: 240px;
+    height: calc(100vh - 66px);
     overflow-y: auto;
 }
 
-.secondAside::-webkit-scrollbar-thumb {
+.secondAside .asideWrapper::-webkit-scrollbar-thumb {
     background-color: transparent;
 }
 
-.secondAside:hover::-webkit-scrollbar-thumb {
+.secondAside .asideWrapper:hover::-webkit-scrollbar-thumb {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
@@ -339,9 +352,23 @@ main {
     overflow-x: hidden;
 }
 
-.tagBtn {
+.nextWrapper,
+.prevWrapper {
     position: fixed;
     z-index: 1003;
+    display: flex;
+}
+
+.nextWrapper {
+    top: 56px;
+    right: 0;
+}
+
+.prevWrapper {
+    top: 56px;
+}
+
+.tagBtn {
     background: rgba(33, 33, 33, 0.98);
     border: 0;
     height: 54px;
@@ -352,39 +379,22 @@ main {
     align-items: center;
 }
 
-.prevBtn {
-    top: 56px;
-}
-
-.nextBtn {
-    top: 56px;
-    right: 0;
-}
-
 .tagTransparency {
-    position: fixed;
-    z-index: 1000;
     width: 50px;
     height: 54px;
+    display: inline-block;
 }
 
 .prevTransparency {
-    top: 56px;
-    margin-left: 56px;
     background: linear-gradient(to right, rgba(33, 33, 33, 0.98) 20%, rgba(33, 33, 33, 0) 80%);
 }
 
 .nextTransparency {
-    top: 56px;
-    right: 56px;
     background: linear-gradient(to left, rgba(33, 33, 33, 0.98) 20%, rgba(33, 33, 33, 0) 80%);
-    height: 54px;
 }
 
 .nextBtn>figure,
 .prevBtn>figure {
-    top: 0;
-    right: 56px;
     background: linear-gradient(to left, rgba(33, 33, 33, 0.98) 20%, rgba(33, 33, 33, 0) 80%);
     width: 32px;
     height: 32px;
@@ -399,7 +409,8 @@ main {
     animation-duration: 1s;
 }
 
-.nextBtn:active>figure {
+.nextBtn:active > figure,
+.prevBtn:active > figure {
     background: rgba(255, 255, 255, 0.1);
 }
 
