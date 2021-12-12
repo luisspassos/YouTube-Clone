@@ -15,6 +15,8 @@ const body = document.querySelector("body");
 const menuAndLogo = document.querySelector(".menuAndLogo");
 const firstAside = document.querySelector(".firstAside");
 const options = document.querySelectorAll(".options");
+const videos = document.querySelectorAll(".videos li");
+const videoImg = document.querySelectorAll(".videoImg"); 
 
 function borderAnimation(el) {
     el.classList.remove("animatedBorder")
@@ -62,9 +64,11 @@ searchInput.addEventListener("input", ()=> {
     if(searchInput.value !== "") {
         clearSearchBtn.style.display = "block"
         virtualKeyboard.style.right = "40px";
+        searchInput.classList.add("xPadding");
     } else {
         clearSearchBtn.style.display = "none"
         virtualKeyboard.style.right = "10px";
+        searchInput.classList.remove("xPadding");
     }
 })
 
@@ -84,6 +88,14 @@ menu.addEventListener("click", ()=> {
     secondAside.classList.toggle("off");
     firstAside.classList.toggle("off");
     body.classList.toggle("firstAsideGrid");
+
+    videos.forEach(video => {
+        video.classList.toggle("firstAsideVideos")
+    })
+
+    videoImg.forEach(img => {
+        img.classList.toggle("firstAsideVideoImgs")
+    })
 })
 
 // video 
