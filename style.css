@@ -323,21 +323,25 @@ main {
     position: relative;
 }
 
-.tags {
-    background-color: #181818;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+.tagsWrapper {
     position: sticky;
     z-index: 999;
     top: 56px;
     left: 0;
+}
+
+.tags {
+    background-color: #181818;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
     height: 56px;
     overflow-x: hidden;
 }
 
 .tagBtn {
     position: fixed;
-    z-index: 1000;
+    z-index: 1003;
     background: rgba(33, 33, 33, 0.98);
     border: 0;
     height: 54px;
@@ -350,7 +354,6 @@ main {
 
 .prevBtn {
     top: 56px;
-    left: 0;
 }
 
 .nextBtn {
@@ -367,7 +370,7 @@ main {
 
 .prevTransparency {
     top: 56px;
-    left: 56px;
+    margin-left: 56px;
     background: linear-gradient(to right, rgba(33, 33, 33, 0.98) 20%, rgba(33, 33, 33, 0) 80%);
 }
 
