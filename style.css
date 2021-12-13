@@ -615,6 +615,24 @@ main {
     }
 }
 
+@media (max-width: 1270px) {
+    .secondAside {
+        display: none;
+    }
+
+    .firstAside {
+        display: block !important;
+    }
+
+    body {
+        grid-template-columns: 72px 1fr;
+    }
+
+    #menu:active {
+        background: none;
+    }
+}
+
 @media (max-width: 715px) {
     .search {
         display: none;
@@ -622,6 +640,16 @@ main {
 
     .mobileItem {
         display: block;
+    }
+}
+
+@media (max-width: 650px) {
+    .firstAside {
+        display: none !important;
+    }
+
+    body {
+        grid-template-areas: "header header" "main main";
     }
 }
 

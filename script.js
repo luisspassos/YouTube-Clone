@@ -82,20 +82,23 @@ clearSearchBtn.addEventListener("click", ()=> {
 // aside
 
 menu.addEventListener("click", ()=> {
-    borderAnimation(menu)
+    if(window.innerWidth > 1270) {
+        
+        borderAnimation(menu)
 
-    menuAndLogo.classList.toggle("filledMenu");
-    secondAside.classList.toggle("off");
-    firstAside.classList.toggle("off");
-    body.classList.toggle("firstAsideGrid");
-
-    videos.forEach(video => {
-        video.classList.toggle("firstAsideVideos")
-    })
-
-    videoImg.forEach(img => {
-        img.classList.toggle("firstAsideVideoImgs")
-    })
+        menuAndLogo.classList.toggle("filledMenu");
+        secondAside.classList.toggle("off");
+        firstAside.classList.toggle("off");
+        body.classList.toggle("firstAsideGrid");
+    
+        videos.forEach(video => {
+            video.classList.toggle("firstAsideVideos")
+        })
+    
+        videoImg.forEach(img => {
+            img.classList.toggle("firstAsideVideoImgs")
+        })
+    } 
 })
 
 // video 
