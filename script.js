@@ -28,32 +28,6 @@ function borderAnimation(el) {
 
 }
 
-//tags
-
-function tagBtnsFunc(translate, el) {
-    borderAnimation(el)
-
-    tagList.style.transform = `translateX(${translate})`
-    nextWrapper.classList.toggle("off");
-    prevWrapper.classList.toggle("off");
-}
-
-prevBtn.addEventListener("dragend", ()=> {
-    tagBtnsFunc("0px", figurePrevButton)
-})
-
-prevBtn.addEventListener("click", ()=> {
-    tagBtnsFunc("0px", figurePrevButton)
-})
-
-nextBtn.addEventListener("dragend", ()=> {
-   tagBtnsFunc("-550px", figureNextButton)
-})
-
-nextBtn.addEventListener("click", ()=> {
-    tagBtnsFunc("-550px", figureNextButton)
-})
-
 // search
 
 form.addEventListener("submit", (e)=> {

@@ -25,7 +25,7 @@ body {
     min-height: 100vh;
     display: grid;
     overflow-x: hidden;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 240px calc(100% - 240px);
     grid-template-rows: 56px 1fr;
     grid-template-areas: "header header" "aside main";
 }
@@ -235,7 +235,7 @@ a {
 }
 
 .firstAsideGrid {
-    grid-template-columns: 72px 1fr;
+    grid-template-columns: 72px calc(100% - 72px);
 }
 
 .firstAside label {
@@ -348,6 +348,7 @@ a {
 }
 
 main {
+    max-width: 100%;
     grid-area: main;
     position: relative;
 }
@@ -442,9 +443,6 @@ main {
     height: 100%;
     padding: 0 25px;
     list-style: none;
-    transform: translateX(0);
-    transition: .3s;
-    position: relative;
 }
 
 .tagList li:first-child {
@@ -469,11 +467,14 @@ main {
 }
 
 .videos {
+    margin: 0 auto;
+    max-width: 1200px;
     padding: 25px;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     gap: 30px 15px;
+    justify-content: center;
 }
 
 .videos li {
@@ -625,13 +626,19 @@ main {
     }
 
     body {
-        grid-template-columns: 72px 1fr;
+        grid-template-columns: 72px calc(100% - 72px);
     }
 
     #menu:active {
         background: none;
     }
 }
+
+@media (min-width: 1120px) {
+    .nextWrapper {
+        display: none;
+    }
+} 
 
 @media (max-width: 715px) {
     .search {
